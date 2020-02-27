@@ -1,0 +1,45 @@
+<style>
+img{
+  width: 100%;
+
+}
+.gallery{
+  width: 500px;
+}
+.thumbs img{
+  width: 100px;
+  cursor: pointer;
+}
+
+
+</style>
+
+<body>
+  <div class="gallery">
+    <img src="1.jpg" id='g'>
+  </div>
+  <div class="thumbs">
+    <img src="1.jpg"class="thumb" >
+    <img src="2.jpg" class="thumb">
+    <img src="3.jpg"class="thumb" >
+    <img src="4.jpg"class="thumb" >
+  </div>
+</body>
+<script>
+
+let thumb =document.querySelectorAll('.thumb');
+// console.log(thumb);
+thumb.forEach(function(t){
+  t.addEventListener("click",function(){
+    let g=document.getElementById('g');
+    // console.log(g);
+    // console.log(this.getAttribute("src"));
+    g.setAttribute("src",this.getAttribute("src"));
+    // console.log(g.getAttribute("src"));
+  });
+})
+  
+//用foreach使每個小圖都被監聽,取得大圖的id,再用getattribute後,再用setattribute.
+
+
+</script>
